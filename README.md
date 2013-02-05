@@ -6,7 +6,8 @@ This project is an application based on [angular-seed](http://https://github.com
 
     git clone git://github.com/sofibraun/angularjs-task-example.git
     cd angularjs-task-example
-run `scripts/web-server.js`
+install node.js and run `scripts/web-server.js`
+
 Then navigate your browser to `http://localhost:<port>/app/index.html` to see the app running in your browser.
 
 ## Contact
