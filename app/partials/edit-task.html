@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  
+  <div class="page-header">
+    <h1> Edit Task </h1>
+  </div>
+
+  <form class="form-horizontal" name="editTask"> 
+		<div class="control-group">
+			<label class="control-label"> Name: </label>
+			<div class="controls"> 
+				<input type="text" 
+							name="task[name]"
+              ng-model="task.name"
+              required> 
+
+         </input>     
+         <span ng-show="editTask.name.$error.required"
+                class="help-inline">
+            Required
+          </span>
+			</div>
+		</div>	
+
+		<div class="control-group">
+			<label class="control-label"> Description: </label>
+			<div class="controls"> 
+				<input type="text" 
+							name="task[description]"
+              ng-model="task.description"
+              required> 
+        
+         </input>     
+        <span ng-show="editTask.description.$error.required"
+                class="help-inline">
+            Required
+          </span>
+			</div>
+		</div>	
+		
+		<div class="form-actions">
+				<a href="#/" class="btn">Cancel</a>
+	  		<button ng-click="save()"
+	  						ng-disabled="isClean() || editTask.$invalid"
+	  						class="btn btn-primary">
+	  						Save
+	  		</button>
+	  		<button ng-click="destroy()"
+              class="btn btn-danger">
+              Delete
+      </button>
+		</div>	
+	</form>
+
+</div>
+

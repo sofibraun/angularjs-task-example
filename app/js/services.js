@@ -2,8 +2,11 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+angular.module('tasksServices', ['ngResource']).
+    factory('Task', function($resource){
+  return $resource('http://localhost\\:3000/tasks/:taskId', {}, {
+    query: {method: 'GET', params:{taskId: ''}, isArray:true},
+    update: {method:'PUT', params:{ taskId: '' }},
+    destroy: {method:'DELETE', params:{ taskId: '' }}
+  });
+});
